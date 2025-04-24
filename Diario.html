@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="diario-container">
+        <h2>Meu Diário</h2>
+        <textarea id="diario" placeholder="Escreva aqui o seu diário..."></textarea>
+        <button onclick="saveEntry()">Salvar</button>
+    </div>
+
+    <script>
+        // Função para salvar a entrada do diário
+        function saveEntry() {
+            const entry = document.getElementById('diario').value;
+            if (entry) {
+                localStorage.setItem('diarioEntry', entry);
+                alert("Entrada salva!");
+            } else {
+                alert("Escreva algo no diário!");
+            }
+        }
+
+        // Carregar a entrada do diário salva
+        window.onload = function() {
+            const savedEntry = localStorage.getItem('diarioEntry');
+            if (savedEntry) {
+                document.getElementById('diario').value = savedEntry;
+            }
+        };
+    </script>
+
+</body>
+</html>
