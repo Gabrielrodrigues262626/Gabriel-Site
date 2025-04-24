@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Diário</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Hacker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="menu">
+    <button onclick="mostrar('login')">Login</button>
+    <button onclick="mostrar('cadastro')">Cadastro</button>
+    <button onclick="mostrar('diario')">Diário</button>
+    <button onclick="mostrar('chatbot')">ChatBot</button>
+    <button onclick="logout()">Sair</button>
+  </nav>
 
-    <div class="login-container">
-        <h2>Login - Diário</h2>
-        <form id="loginForm">
-            <label for="username">Usuário</label>
-            <input type="text" id="username" name="username" required>
+  <section id="login" class="tela">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Usuário">
+    <input type="password" id="loginPass" placeholder="Senha">
+    <button onclick="fazerLogin()">Entrar</button>
+  </section>
 
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
+  <section id="cadastro" class="tela">
+    <h2>Cadastro</h2>
+    <input type="text" id="cadastroUser" placeholder="Novo Usuário">
+    <input type="password" id="cadastroPass" placeholder="Nova Senha">
+    <button onclick="fazerCadastro()">Cadastrar</button>
+  </section>
 
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+  <section id="diario" class="tela">
+    <h2>Diário</h2>
+    <input type="date" id="dataEntrada">
+    <textarea id="textoEntrada" placeholder="Escreva seu dia..."></textarea>
+    <button onclick="salvarEntrada()">Salvar</button>
+    <button onclick="carregarEntrada()">Carregar</button>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="chatbot" class="tela">
+    <h2>ChatBot</h2>
+    <div id="chat"></div>
+    <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
+    <button onclick="enviarMensagem()">Enviar</button>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
