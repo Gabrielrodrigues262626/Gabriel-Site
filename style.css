@@ -1,100 +1,63 @@
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo geral */
+/* style.css */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: black;
-    color: #00ff00; /* Verde estilo hacker */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    animation: backgroundAnimation 3s infinite linear;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: #00ff00;
 }
 
-/* Animação de fundo */
-@keyframes backgroundAnimation {
-    0% { background-color: #000000; }
-    50% { background-color: #003300; }
-    100% { background-color: #000000; }
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #003300;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Contêiner do login */
-.login-container {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.4);
-    width: 300px;
-    text-align: center;
-    border: 2px solid #00ff00;
-    animation: fadeIn 2s ease-out;
+.menu button {
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Animação de fade in */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.menu button:hover {
+  background: #004d00;
 }
 
-/* Títulos e rótulos */
-h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #00ff00;
+.tela {
+  display: none;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff00;
 }
 
-/* Estilo do formulário */
-label {
-    display: block;
-    margin-bottom: 8px;
-    text-align: left;
-    color: #00ff00;
+.tela input,
+.tela textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  border-radius: 5px;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #00ff00;
-    border-radius: 4px;
-    background-color: black;
-    color: #00ff00;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    outline: none;
-    border-color: #00cc00;
-    background-color: #003300;
-}
-
-/* Botão de submit */
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: #00ff00;
-    color: black;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #00cc00;
-}
-
-button:active {
-    background-color: #00aa00;
+#chat {
+  height: 300px;
+  overflow-y: auto;
+  background: #001a00;
+  padding: 10px;
+  border: 1px solid #00ff00;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
